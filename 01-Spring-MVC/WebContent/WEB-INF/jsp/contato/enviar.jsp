@@ -23,5 +23,7 @@
 		</div>	
 		<input type="submit" value="Enviar">
 	</form></center>
+	${msg }
+	${nome }
 </body>
 </html>

@@ -1,0 +1,25 @@
+package br.com.fiap.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.fiap.spring.model.Carro;
+
+@Controller
+@RequestMapping("cadastrar")
+public class CarroController {
+
+	@GetMapping("carro")
+	public String cadastrarCarro() {
+		return "carro/cadastrarCarro";
+	}
+	
+	@PostMapping(value="cadastrar")
+	public String processarForm(Carro c) {
+		System.out.println(c.getPlaca() + " " + c.getPreco() + " " +
+					c.getMarca() + " " + c.isAutomatico());
+		return "carro/cadastrarCarro";
+	}
+}
